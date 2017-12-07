@@ -1,0 +1,26 @@
+
+
+dd {
+    padding-left: 10px;
+}
+
+#score-panel {
+    box-shadow: 3px 3px 10px 1px #b4b4b4;
+}
+
+#detail-panel {
+    box-shadow: 3px 3px 10px 1px #b4b4b4;
+}
+
+#sm-head {
+    padding-top: 20%;
+}
+
+    #sm-head small {
+        padding-top: 23px;
+    }
+
+#sm-panel-body {
+    padding-top: 30px;
+    height:450px;
+}

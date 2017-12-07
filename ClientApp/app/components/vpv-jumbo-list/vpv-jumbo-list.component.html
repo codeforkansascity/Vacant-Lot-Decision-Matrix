@@ -1,0 +1,9 @@
+
+<div class="search-item" *ngFor="let result of searchResults">
+    <div style="">
+        <div (click)="onItemSelected(result)" class="col-xs-12 col-md-8 col-md-offset-1">
+            <span> {{result.formattedAddress}} </span>
+        </div>
+    </div>
+</div>
+

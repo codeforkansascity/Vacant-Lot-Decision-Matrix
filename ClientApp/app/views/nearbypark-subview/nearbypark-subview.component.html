@@ -1,0 +1,45 @@
+
+
+<div style="width:100%; height:100%;">
+    <div class="col-xs-4">
+        <h3 class="text-primary">Nearby <span class="text-success"> Parks </span> </h3>
+        <hr />
+        <div>
+            <dl class="dl-horizontal" *ngFor="let p of parks">
+                <dt>{{p.name}}</dt>
+                <dd>{{p.distanceMeters * 0.000621371 | number:'1.1-1'}} mi</dd>
+            </dl>
+        </div>
+    </div>
+
+
+
+    <div id="map-container" class="col-xs-5 pull-right">
+
+        <agm-map *ngIf="!mapIsBusy"
+                 [latitude]="parcel.latitude"
+                 [longitude]="parcel.longitude"
+                 [mapTypeId]="'hybrid'"
+                 [zoom]="zoom">
+
+            <agm-marker [latitude]="parcel.latitude" [longitude]="parcel.longitude"></agm-marker>
+
+            <agm-polygon *ngIf="geometry"
+                         [paths]="geometry.polygonCollection"
+                         [fillColor]="mainColor"
+                         [strokeColor]="mainColor"></agm-polygon>
+
+            <div *ngFor="let g of parkGeoms">
+                <agm-marker [latitude]="g.lat" [longitude]="g.lng"></agm-marker>
+                <agm-polygon [paths]="g.polygonCollection"
+                             [fillColor]="'chartreuse'"
+                             [strokeColor]="'chartreuse'"></agm-polygon>
+            </div>
+
+        </agm-map>
+
+        <vpv-wait-cursor [displayWhen]="mapIsBusy"></vpv-wait-cursor>
+
+    </div>
+
+</div>

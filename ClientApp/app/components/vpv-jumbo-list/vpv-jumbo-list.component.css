@@ -1,0 +1,34 @@
+.search-item {
+    font-size: 38px;
+    color: dimgrey;
+    z-index:1000;
+    padding:28px;
+    transition: all ease 0.2s; 
+}
+    .search-item:hover .col-xs-1, .search-item:hover .col-sm-1, .search-item:hover .col-md-1, .search-item:hover .col-lg-1,
+    .search-item:hover .col-xs-2, .search-item:hover .col-sm-2, .search-item:hover .col-md-2, .search-item:hover .col-lg-2,
+    .search-item:hover .col-xs-3, .search-item:hover .col-sm-3, .search-item:hover .col-md-3, .search-item:hover .col-lg-3,
+    .search-item:hover .col-xs-4, .search-item:hover .col-sm-4, .search-item:hover .col-md-4, .search-item:hover .col-lg-4,
+    .search-item:hover .col-xs-5, .search-item:hover .col-sm-5, .search-item:hover .col-md-5, .search-item:hover .col-lg-5,
+    .search-item:hover .col-xs-6, .search-item:hover .col-sm-6, .search-item:hover .col-md-6, .search-item:hover .col-lg-6,
+    .search-item:hover .col-xs-7, .search-item:hover .col-sm-7, .search-item:hover .col-md-7, .search-item:hover .col-lg-7,
+    .search-item:hover .col-xs-8, .search-item:hover .col-sm-8, .search-item:hover .col-md-8, .search-item:hover .col-lg-8,
+    .search-item:hover .col-xs-9, .search-item:hover .col-sm-9, .search-item:hover .col-md-9, .search-item:hover .col-lg-9,
+    .search-item:hover .col-xs-10, .search-item:hover .col-sm-10, .search-item:hover .col-md-10, .search-item:hover .col-lg-10,
+    .search-item:hover .col-xs-11, .search-item:hover .col-sm-11, .search-item:hover .col-md-11, .search-item:hover .col-lg-11,
+    .search-item:hover .col-xs-12, .search-item:hover .col-sm-12, .search-item:hover .col-md-12, .search-item:hover .col-lg-12 {
+        color: dodgerblue;
+        /*background-color: #d1e8ff !important;*/
+        width: 100%;
+        cursor: pointer;
+        z-index: 1000;
+        transition: all ease 0.3s; 
+        overflow: hidden;
+        
+    }
+@media only screen and (max-width: 768px) {
+    .search-item {
+        font-size: 25px;
+        padding:22px;
+    }
+}

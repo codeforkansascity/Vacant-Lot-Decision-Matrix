@@ -1,0 +1,13 @@
+
+<div #animationComponent id="animation-component" class="col-xs-12 col-sm-6 col-md-5">
+    <form (ngSubmit)="onSubmit()" class="form-inline">
+        <label #searchIcon for="searchBox">
+            <fa name="search" size="2x"></fa>
+        </label>
+        <input #searchBox autocomplete="off" name="searchBox" class="input" placeholder="Search lots" type="text" />
+        <span class="underline-active"></span>
+        <span class="underline-idle"></span>
+        <input type="submit" style="display:none" />
+    </form>
+</div>
+

@@ -1,0 +1,14 @@
+﻿#bg-screen {
+    width: 0;
+    height: 0;
+    position: fixed;
+    z-index: -1000;
+}
+
+    #bg-screen.search-active {
+        top:0;
+        width: 100%;
+        height: 100%;
+        /*background-color: rgb(167, 218, 255);*/
+    }
+

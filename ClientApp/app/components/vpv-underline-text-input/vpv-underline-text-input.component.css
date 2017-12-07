@@ -1,0 +1,82 @@
+#animation-component {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition:all ease 0.5s;
+}
+#animation-component.selected {
+    top:6%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.input {
+    padding: 10px 0px;
+    font-size: 30px;
+    
+    width: 88%;
+    border: none;
+    outline: none;
+    background-color:transparent;
+}
+
+label {
+    color: lightgrey;
+}
+
+input:focus {
+    outline: none;
+    /*font-size:34px;*/
+    
+}
+
+input::-webkit-input-placeholder {
+    color: #AAA;
+}
+
+.input:focus button, input, optgroup, select, textarea {
+    margin: 0;
+    color: dodgerblue;
+}
+
+.input:focus + .underline-active {
+    transform: scale(1);
+}
+.input:focus ~ .underline-idle {
+    background-color:transparent;
+}
+
+.underline-active {
+    background-color: dodgerblue;
+    display: block;
+    height: 4.5px;
+    left: 50px;
+    margin-top: -4px;
+    top: 185px;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    width: 100%;
+}
+
+.underline-idle {
+    background-color: lightgray;
+    display: block;
+    height: 2px;
+    left: 50px;
+    margin-top: -3px;
+    top: 186px;
+    transform: scale(1, 1);
+    width: 100%;
+}
+
+#search-icon {
+    color:lightgray;
+}

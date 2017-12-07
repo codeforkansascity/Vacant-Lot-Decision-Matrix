@@ -1,0 +1,45 @@
+
+
+<div style="width:100%; height:100%;">
+    <div class="col-xs-4">
+        <h3 class="text-primary">Adjacent <span class="text-danger"> Vacant </span> </h3> 
+        <hr />
+        <div id="id-list">
+            <dl>
+                <dt>Addresses <br /><br /></dt>
+                <dd *ngFor="let parcel of adjParcels">{{parcel.formattedAddress}}, Kansas City, MO <br /><br /> </dd>
+            </dl>
+        </div>
+    </div>
+
+
+
+    <div id="map-container" class="col-xs-5 pull-right">
+
+        <agm-map *ngIf="!mapIsBusy"
+                 [latitude]="parcel.latitude"
+                 [longitude]="parcel.longitude"
+                 [mapTypeId]="'hybrid'"
+                 [zoom]="zoom">
+
+            <agm-marker [latitude]="parcel.latitude" [longitude]="parcel.longitude"></agm-marker>
+
+            <agm-polygon *ngIf="geometry"
+                         [paths]="geometry.polygonCollection"
+                         [fillColor]="mainColor"
+                         [strokeColor]="mainColor"></agm-polygon>
+
+            <div *ngFor="let g of adjGeom">
+                <agm-marker [latitude]="g.lat" [longitude]="g.lng"></agm-marker>
+                <agm-polygon [paths]="g.polygonCollection"
+                             [fillColor]="'red'"
+                             [strokeColor]="'red'"></agm-polygon>
+            </div>
+
+        </agm-map>
+
+        <vpv-wait-cursor [displayWhen]="mapIsBusy"></vpv-wait-cursor>
+
+    </div>
+
+</div>
