@@ -1,0 +1,20 @@
+
+<div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+        <li routerLink='overview' routerLinkActive="active"> <a> Overview </a>
+        </li>
+        <li *ngFor="let t of tabItems" [routerLink]="[t.path]" routerLinkActive="active">
+            <a>
+                {{t.question}} &nbsp; <b class="badge">{{t.answer}}</b>
+            </a>
+        </li>
+
+        <li style="padding-top:40%; padding-bottom:40%"></li>
+    </ul>
+    <div>
+
+        <router-outlet></router-outlet>
+
+    </div>
+</div>
+

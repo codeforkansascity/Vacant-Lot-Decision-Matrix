@@ -1,0 +1,16 @@
+agm-map {
+    padding:0;
+    width:100%;
+    height: 590px;
+}
+#map-container {
+    padding:0;
+}
+
+#id-list dt {
+    padding-top:17px;
+}
+
+.tab-text-content {
+    font-size:15px;
+}

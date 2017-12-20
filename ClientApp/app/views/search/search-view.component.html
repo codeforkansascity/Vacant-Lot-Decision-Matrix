@@ -1,0 +1,11 @@
+
+<vpv-underline-text-input (keyup)="searchTerm$.next($event.target.value)" 
+                      (searchFocusChanged)="doAnimations($event)" 
+                      (searchSubmitted)="onSubmitted($event)" #inputEle>
+</vpv-underline-text-input>
+
+<div id="bg-screen" #bgScreen></div>
+<div style="margin-top:12%;">
+    <vpv-jumbo-list [searchResults]="results" (itemClicked)="onItemClicked($event)">
+    </vpv-jumbo-list>
+</div>

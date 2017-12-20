@@ -1,0 +1,56 @@
+
+
+<div style="width:100%; height:100%;">
+    <div class="col-xs-4">
+        <h3 class="text-primary">Overview</h3>
+        <hr />
+        <span class="lead text-muted">Identifiers</span>
+        <div class="tab-text-content">
+            <span>
+                There are many means of identifying and tracking a parcel
+                here are some common identifiers we have available for this parcel
+            </span>
+            <div id="id-list" *ngIf="parcel">
+                <dl>
+                    <dt>Address</dt>
+                    <dd>{{parcel.formattedAddress}}, Kansas City, MO </dd>
+                    <dt>Kivapin (City Id)</dt>
+                    <dd>{{parcel.kivapin}}</dd>
+                    <dt *ngIf="parcel.apn">Apn (County Id)</dt>
+                    <dd>{{parcel.apn}} </dd>
+                </dl>
+                <span class="text-info">
+                    Here are the identifiers associated with this applications API <br />
+                </span>
+                <dl>
+                    <dt>ParcelId</dt>
+                    <dd>{{parcel.parcelId}}</dd>
+
+                    <dt>GeometryId</dt>
+                    <dd>{{parcel.geometryId}}</dd>
+                </dl>
+
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div id="map-container" class="col-xs-5 pull-right">
+
+        <agm-map *ngIf="parcel"
+                 [latitude]="parcel.latitude"
+                 [longitude]="parcel.longitude"
+                 [mapTypeId]="'hybrid'"
+                 [zoom]="zoom">
+
+            <agm-marker [latitude]="parcel.latitude" [longitude]="parcel.longitude"></agm-marker>
+
+            <agm-polygon *ngIf="geometry"
+                         [paths]="geometry.polygonCollection"
+                         [fillColor]="mainColor"
+                         [strokeColor]="mainColor"></agm-polygon>
+        </agm-map>
+
+    </div>
+</div>

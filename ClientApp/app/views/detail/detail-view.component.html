@@ -1,0 +1,46 @@
+
+
+<br />
+<div class="container" *ngIf="parcel">
+
+    <div class="page-header">
+        <h2 class="text-primary">{{parcel.formattedAddress}}<small>&nbsp;(Kiva {{parcel.kivapin}})</small> <a class="pull-right" [routerLink]="['search']"> <fa name="search" size="1x"></fa>  <span class="lead"> Search </span></a></h2>
+        
+
+    </div>
+
+    <div id="score-panel" class="panel panel-primary">
+        <div class="panel-heading">
+            <span class="lead"> Summary </span>
+        </div>
+        <div id="sm-panel-body" class="panel-body">
+            <div class="col-xs-4">
+                <h2 #smHead id="sm-head" class="text-center text-primary">
+                    {{usageHeader}}
+                    <small class="col-xs-12" [innerText]="loadingMessage"></small>
+                </h2>
+            </div>
+
+            <div class="col-xs-8">
+
+                <vpv-wait-cursor [displayWhen]="matrixIsBusy"></vpv-wait-cursor>
+                
+                <vpv-matrix-chart [matrixStats]="matrixStats" *ngIf="!matrixIsBusy"></vpv-matrix-chart>
+                
+            </div>
+        </div>
+    </div>
+
+    <br /><hr /><br />
+
+    <div id="detail-panel" class="panel panel-primary">
+        <div class="panel-heading">
+            <span class="lead"> Usage details </span>
+        </div>
+        <div *ngIf="parcel&&tabs" class="panel-body">
+            <vpv-tabbed-console [parcel]="parcel"
+                                [tabs]="tabs">
+            </vpv-tabbed-console>
+        </div>
+    </div>
+</div>
